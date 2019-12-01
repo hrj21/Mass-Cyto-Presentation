@@ -1,0 +1,44 @@
+---
+title: "Introduction to high-parameter analysis"
+author: "Hefin Rhys"
+date: "January, 2019"
+output:
+  revealjs::revealjs_presentation:
+    theme: default
+    incremental: true
+    widescreen: true
+    smaller: true
+    css: custom.css
+---
+
+## What are the goals of our analysis? 
+![hmm](img/hmm_a5viI92PAF89q.gif)
+
+- Identify all cell types present in the sample
+- Compare population frequencies between samples
+- Compare antigen expression between samples
+- Track cell development pathways
+- Characterise functional state of populations
+
+## What are the challenges presented by mass cytometry data?
+![why+is+it+so+hard+crying](img/why+is+it+so+hard+crying_bSMLyLCwmoNeizLZqY.gif)
+
+- More parameters than conventional flow cytometry
+- Visualising patterns in the data is difficult
+- Manual gating is difficult to impossible (2^p^ bivariate combinations)
+- We turn to machine learning techniques instead
+
+## What are the challenges presented by mass cytometry data?
+
+<div align="center">
+<img src="img/OMIP_024.png" width=500 height=430>
+</div>
+
+<small> We turn to machine learning techniques instead to do the work for us, but these techniques can perform poorly due to the *curse of dimensionality* </small>
+
+
+## The curse of dimensionality
+<div align="center">
+<img src="img/Curse_of_dimensionality.png" width=635 height=300>
+</div>
+
