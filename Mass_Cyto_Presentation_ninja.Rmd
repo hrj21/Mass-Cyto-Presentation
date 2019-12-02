@@ -259,6 +259,8 @@ The t-SNE algorithm has **hyperparameters** that control what the final embeddin
 - eta &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (learning rate, default value usually fine)
 - n iterations / epochs &emsp; (must be high enough to converge)
 
+--
+
 .pull-left[
 
 <div>
