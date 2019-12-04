@@ -4,7 +4,7 @@
     <title>Introduction to high-parameter analysis</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hefin Rhys" />
-    <meta name="date" content="2019-12-02" />
+    <meta name="date" content="2019-12-04" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -18,7 +18,7 @@ class: center, middle, inverse, title-slide
 ## For mass cytometry
 ### Hefin Rhys
 ### Francis Crick Institute
-### 2019-12-02
+### 2019-12-04
 
 ---
 
@@ -200,27 +200,32 @@ class: inverse, center, middle
 
 --
 
-- .large[**Principal components analysis**]
-  - Linear dimension reduction
-  - Principal components are linear combinations of existing variables
-  - The first few PCs explain most of the variation in the data, the rest can be discarded
-  - Usually performs poorly for flow cytometry data
-  
+- **Principal components analysis**
+
+    - Linear dimension reduction
+    - The first few PCs explain most of the variation in the data, the rest can be discarded
+    - Usually performs poorly for flow cytometry data
+--
+- **t-distributed stochastic neighbor embedding (t-SNE)**
+
+    - Non-linear dimension reduction
+    - Computationally expensive
+    - Works well for flow cytometry data
+--
+- **Uniform manifold approximation and projection (UMAP)**
+
+    - Non-linear dimension reduction
+    - Not as computationally expensive
+    - Works well for flow cytometry data
 --
 
-- .large[**t-distributed stochastic neighbor embedding / t-SNE**]
-  - Non-linear dimension reduction
-  - Calculates distance between cases, then tries to reproduce these distances in fewer dimensions
-  - Computationally expensive
-  - Works well for flow cytometry data
+.footnote[A brand new algorithm called PHATE was released in December: (https://www.biorxiv.org/content/10.1101/120378v1)]
 
---
+---
+class: inverse, center, middle
 
-- .large[**Uniform manifold approximation and projection / UMAP**]
-  - Non-linear dimension reduction
-  - Works in a similar way to t-SNE, but calculates distances differently
-  - Not as computationally expensive
-  - Works well for flow cytometry data
+# t-SNE
+
 ---
 
 # How does t-SNE work?
@@ -287,101 +292,74 @@ The t-SNE algorithm has **hyperparameters** that control what the final embeddin
 
 ---
 
-# R Plots
+# Hyperparameters of t-SNE
+
+&lt;div&gt;
+&lt;img src="img/Perplexity_impact.png"&gt;
+&lt;/div&gt;
+
 ---
+class: inverse, center, middle
 
-# Tables
+# UMAP
 
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+---
+class: center, middle
+
+# How does UMAP work?
 
 
-```r
-knitr::kable(head(iris), format = 'html')
-```
+&lt;div&gt;
+&lt;img src="img/umap_alg.png" height = 500&gt;
+&lt;/div&gt;
 
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+
+---
+class: center, middle
+
+# What does a UMAP look like for mass cytometry data?
+
+&lt;div&gt;
+&lt;img src="img/umap_v_tsne.PNG"&gt;
+&lt;/div&gt;
+
 
 ---
 
-# HTML Widgets
+# Hyperparameters of UMAP
 
-I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
+The t-SNE algorithm has **hyperparameters** that control what the final embedding looks like:
 
-Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
+- perplexity &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; (emphasis on global vs local structure)
+- theta &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; (0 -&gt; 1 increases speed but decreases accuracy)
+- eta &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; (learning rate, default value usually fine)
+- n iterations / epochs &amp;emsp; (must be high enough to converge)
 
-See the next page for two HTML widgets.
+--
+
+.pull-left[
+
+&lt;div&gt;
+&lt;img src="img/tsne_hyper1.png" height = 300&gt;
+&lt;/div&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;div&gt;
+&lt;img src="img/tsne_hyper2.png" height = 300&gt;
+&lt;/div&gt;
+]
 
 ---
 
+# Hyperparameters of t-SNE
 
-```r
-library(leaflet)
-leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
-```
-
----
-
-
-```r
-DT::datatable(
-  head(iris, 10),
-  fillContainer = FALSE, options = list(pageLength = 8)
-)
-```
+&lt;div&gt;
+&lt;img src="img/Perplexity_impact.png"&gt;
+&lt;/div&gt;
 
 ---
 
