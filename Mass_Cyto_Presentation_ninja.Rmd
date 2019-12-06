@@ -86,7 +86,7 @@ class: center
 
 --
 
-.vlarge[We turn to compuational, **machine learning** techniques to gate populations for us.]
+.vlarge[We turn to computational, **machine learning** techniques to gate populations for us.]
 
 <div>
 <img src="img/terminator.gif" width=300 height=200>
@@ -159,6 +159,16 @@ class: inverse, center, middle
 # What is dimension reduction?
 
 .vlarge[Dimension reduction algorithms aim to convert a large number of dimensions into a smaller number of dimensions, while preserving as much of the original, high-dimensional information as possible.]
+
+---
+
+class: inverse, center, middle
+
+# What is dimension reduction?
+
+<div>
+<img src="img/awkward_girl.gif" height = 300>
+</div>
 
 ---
 
