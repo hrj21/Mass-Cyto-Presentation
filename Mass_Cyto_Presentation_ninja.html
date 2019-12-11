@@ -4,10 +4,11 @@
     <title>Introduction to high-parameter analysis</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hefin Rhys" />
-    <meta name="date" content="2019-12-06" />
+    <meta name="date" content="2019-12-11" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
@@ -18,7 +19,7 @@ class: center, middle, inverse, title-slide
 ## For mass cytometry
 ### Hefin Rhys
 ### Francis Crick Institute
-### 2019-12-06
+### 2019-12-11
 
 ---
 
@@ -94,7 +95,7 @@ class: center
 
 --
 
-.vlarge[We turn to computational, **machine learning** techniques to gate populations for us.]
+.vlarge[We turn to computational, **machine learning** methods to gate populations for us.]
 
 &lt;div&gt;
 &lt;img src="img/terminator.gif" width=300 height=200&gt;
@@ -113,7 +114,7 @@ class: center
 # The curse of dimensionality
 &lt;center&gt;
 &lt;div&gt;
-&lt;img src="img/Curse_of_dimensionality.png"&gt;
+&lt;img src="img/Curse_of_dimensionality.png" height = 300&gt;
 &lt;/div&gt;
 &lt;/center&gt;
 
@@ -137,11 +138,11 @@ class: center
 ---
 # How do we solve these challenges?
 
-.vlarge[**Unsupervised** machine learning!]
+## **Unsupervised** machine learning!
 
 .pull-left[
 
-##  Dimension reduction
+###  Dimension reduction
 
 &amp;nbsp;
 
@@ -152,7 +153,7 @@ class: center
 
 .pull-right[
 
-##  Clustering
+###  Clustering
 
 &amp;nbsp;
 
@@ -330,7 +331,7 @@ class: center, middle
 # What does a UMAP look like for mass cytometry data?
 
 &lt;div&gt;
-&lt;img src="img/umap_v_tsne.PNG"&gt;
+&lt;img src="img/umap_v_tsne.PNG" height = 500&gt;
 &lt;/div&gt;
 
 
@@ -338,38 +339,34 @@ class: center, middle
 
 # Hyperparameters of UMAP
 
-The t-SNE algorithm has **hyperparameters** that control what the final embedding looks like:
+The UMAP algorithm also has hyperparameters that control what the final embedding looks like:
 
-- perplexity &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; (emphasis on global vs local structure)
-- theta &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; (0 -&gt; 1 increases speed but decreases accuracy)
-- eta &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; (learning rate, default value usually fine)
+- n neighbours &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;  (emphasis on global vs local structure)
+- min distance &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;   (clumpy vs spread out points)
 - n iterations / epochs &amp;emsp; (must be high enough to converge)
 
 --
 
-.pull-left[
-
+&lt;center&gt;
 &lt;div&gt;
-&lt;img src="img/tsne_hyper1.png" height = 300&gt;
+&lt;img src="img/umap_hyper.png" height = 400&gt;
 &lt;/div&gt;
-]
-
---
-
-.pull-right[
-
-&lt;div&gt;
-&lt;img src="img/tsne_hyper2.png" height = 300&gt;
-&lt;/div&gt;
-]
+&lt;/center&gt;
 
 ---
 
 # Hyperparameters of t-SNE
 
-&lt;div&gt;
-&lt;img src="img/Perplexity_impact.png"&gt;
-&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;center&gt;
+ &lt;div id="taco_container"&gt;
+    &lt;div class="taco"&gt;&lt;img src="img/elephant.PNG" style="height:350px"&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="taco"&gt;&lt;img src="img/elephant_embed1.PNG" style="height:350px"&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="taco"&gt;&lt;img src="img/elephant_embed2.PNG" style="height:350px"&gt;&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/center&gt;
+
 
 ---
 
