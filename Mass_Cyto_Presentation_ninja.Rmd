@@ -483,3 +483,53 @@ class: inverse, center, middle
 .footnote[flowGrid was released in April 2019: (https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-019-0690-2#article-info)]
 
 ---
+class: inverse, center, middle
+
+# flowSOM
+
+---
+
+# How does flowSOM work?
+
+--
+
+1 - Reduce the number of dimensions using a **self-organizing map (SOM)** <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/som1.gif" height = 170></a></div>
+    <div class="taco"><img src="img/som_rectangle.png" height = 170></a></div>
+  </div>
+</center>
+
+--
+
+2 -  Arrange the SOM into a **minimal spanning tree** for visualisation <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/PrimAlgDemo.gif" height = 170></a></div>
+    <div class="taco"><img src="img/som_mst.png" height = 170></a></div>
+  </div>
+</center>
+
+--
+
+3 -  Find clusters of nodes in the SOM, and place the events in the cluster of their node
+
+---
+
+# Creating the self-organizing map (SOM)
+<br/> <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/som2.gif" height = 400></a></div>
+    <div class="taco"><img src="img/SOM_heatmaps_all.png" height = 400></a></div>
+  </div>
+</center>
+
+---
+
+# Arrange the SOM into a minimal spanning tree
+
