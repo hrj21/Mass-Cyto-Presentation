@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Introduction to high-parameter analysis</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hefin Rhys" />
-    <meta name="date" content="2019-12-19" />
+    <meta name="date" content="2019-12-30" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 ## For mass cytometry
 ### Hefin Rhys
 ### Francis Crick Institute
-### 2019-12-19
+### 2019-12-30
 
 ---
 
@@ -315,7 +315,7 @@ class: inverse, center, middle
 # UMAP
 
 ---
-class: center, middle
+class: center
 
 # How does UMAP work?
 
@@ -326,7 +326,7 @@ class: center, middle
 
 
 ---
-class: center, middle
+class: center
 
 # What does a UMAP look like for mass cytometry data?
 
@@ -467,7 +467,7 @@ class: inverse, center, middle
 
 --
 
-- .large[**Hierarchical clustering** (not great for flow cytometry)]
+- .large[**Hierarchical clustering** (not great for cytometry)]
 
 --
 
@@ -537,6 +537,160 @@ class: inverse, center, middle
     &lt;div class="taco"&gt;&lt;img src="img/SOM_heatmaps_all.png" height = 400&gt;&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/center&gt;
+
+---
+
+# Arrange the SOM into a minimal spanning tree
+
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="img/flowSOM_grid_and_mst.png" height = 510&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+
+.footnote[(https://blog.cytobank.org/2019/03/15/beginners-guide-to-flowsom-profiling-the-innate-immune-response-to-viral-infection/)]
+
+---
+
+# Cluster the nodes
+
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="img/flowSOM_clusters_and_stars.png" height = 520&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+
+.footnote[(https://support.cytobank.org/hc/en-us/articles/360018965212-Introduction-to-FlowSOM-in-Cytobank)]
+
+---
+
+# What does flowSOM look like for mass cytometry data?
+
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="img/flowSom_clusters_and_expression.png" height = 520&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+
+.footnote[(https://github.com/hammerlab/t-cell-data/issues/29)]
+
+---
+
+# Choosing the number of clusters
+
+--
+
+- .large[Identifying the number of clusters in a dataset is an **ill-posed problem**]
+
+--
+
+- .large[Some clustering algorithms need us to state how many clusters to find. Some identify clusters automatically, but may disagree with each other]
+
+--
+
+- .large[Deciding on the the number of clusters in a dataset can be hard and there may not even be one correct answer]
+
+--
+
+- .large[While clustering is a form of **unsupervised** machine learning, ALWAYS validate your clusters manually]
+
+--
+
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="img/over_underfitting_clusters.png" height = 200&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+
+---
+
+# Choosing the number of clusters with flowSOM
+
+--
+
+.large[1 - Use _a priori_ knowledge about the number of clusters]
+
+--
+
+.large[2 - Manually try a range of "sensible" numbers of clusters]
+
+--
+
+.large[3 -  Allow flowSOM (in R) to choose for you]
+
+&lt;br/&gt;
+--
+
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="img/trust.gif" height = 200&gt;
+&lt;/div&gt;
+
+&lt;br/&gt;
+
+.vlarge[Whichever method you choose, you MUST evaluate your clustering model]
+&lt;/center&gt;
+
+---
+
+# Validating a clustering model
+&lt;br/&gt;
+--
+
+.large[1 - Map cluster labels onto a lower-dimensional representation &lt;br/&gt;]
+
+--
+
+.large[2 -  Map cluster labels onto bivariate plots &lt;br/&gt;]
+
+--
+
+.large[3 -  Plot expression data for each cluster &lt;br/&gt;]
+
+
+---
+
+# Validating a cluster model
+&lt;br/&gt;
+
+.large[1 - Map cluster labels onto a lower-dimensional representation &lt;br/&gt;]
+
+&lt;center&gt;
+ &lt;div id="taco_container"&gt;
+    &lt;div class="taco"&gt;&lt;img src="img/Under_cluster_tsne.png" height = 300&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="taco"&gt;&lt;img src="img/Over_cluster_tsne.png" height = 300&gt;&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/center&gt;
+
+--
+
+**Pro:** simple method to evaluate clusters in a single bivariate plot
+
+--
+
+**Con:** relies on the lower-dimensional embedding being a faithful representation of the data
+
+---
+
+# Validating a cluster model
+
+&lt;br/&gt;
+
+.large[1 - Map cluster labels onto a lower-dimensional representation &lt;br/&gt;]
+
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="img/Backgating.png" height = 300&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+
+--
+
+**Pro:** Allows us to incorporate our expert knowlege of biology
+
+--
+
+**Con:** Time consuming, impossible to interrogate all combinations
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

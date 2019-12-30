@@ -13,6 +13,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+
 ---
 class: inverse, center, middle
 
@@ -306,7 +307,7 @@ class: inverse, center, middle
 # UMAP
 
 ---
-class: center, middle
+class: center
 
 # How does UMAP work?
 
@@ -317,7 +318,7 @@ class: center, middle
 
 
 ---
-class: center, middle
+class: center
 
 # What does a UMAP look like for mass cytometry data?
 
@@ -458,7 +459,7 @@ class: inverse, center, middle
 
 --
 
-- .large[**Hierarchical clustering** (not great for flow cytometry)]
+- .large[**Hierarchical clustering** (not great for cytometry)]
 
 --
 
@@ -533,3 +534,152 @@ class: inverse, center, middle
 
 # Arrange the SOM into a minimal spanning tree
 
+<center>
+<div>
+<img src="img/flowSOM_grid_and_mst.png" height = 510>
+</div>
+</center>
+
+.footnote[(https://blog.cytobank.org/2019/03/15/beginners-guide-to-flowsom-profiling-the-innate-immune-response-to-viral-infection/)]
+
+---
+
+# Cluster the nodes
+
+<center>
+<div>
+<img src="img/flowSOM_clusters_and_stars.png" height = 520>
+</div>
+</center>
+
+.footnote[(https://support.cytobank.org/hc/en-us/articles/360018965212-Introduction-to-FlowSOM-in-Cytobank)]
+
+---
+
+# What does flowSOM look like for mass cytometry data?
+
+<center>
+<div>
+<img src="img/flowSom_clusters_and_expression.png" height = 520>
+</div>
+</center>
+
+.footnote[(https://github.com/hammerlab/t-cell-data/issues/29)]
+
+---
+
+# Choosing the number of clusters
+
+--
+
+- .large[Identifying the number of clusters in a dataset is an **ill-posed problem**]
+
+--
+
+- .large[Some clustering algorithms need us to state how many clusters to find. Some identify clusters automatically, but may disagree with each other]
+
+--
+
+- .large[Deciding on the the number of clusters in a dataset can be hard and there may not even be one correct answer]
+
+--
+
+- .large[While clustering is a form of **unsupervised** machine learning, ALWAYS validate your clusters manually]
+
+--
+
+<center>
+<div>
+<img src="img/over_underfitting_clusters.png" height = 200>
+</div>
+</center>
+
+---
+
+# Choosing the number of clusters with flowSOM
+
+--
+
+.large[1 - Use _a priori_ knowledge about the number of clusters]
+
+--
+
+.large[2 - Manually try a range of "sensible" numbers of clusters]
+
+--
+
+.large[3 -  Allow flowSOM (in R) to choose for you]
+
+<br/>
+--
+
+<center>
+<div>
+<img src="img/trust.gif" height = 200>
+</div>
+
+<br/>
+
+.vlarge[Whichever method you choose, you MUST evaluate your clustering model]
+</center>
+
+---
+
+# Validating a clustering model
+<br/>
+--
+
+.large[1 - Map cluster labels onto a lower-dimensional representation <br/>]
+
+--
+
+.large[2 -  Map cluster labels onto bivariate plots <br/>]
+
+--
+
+.large[3 -  Plot expression data for each cluster <br/>]
+
+
+---
+
+# Validating a cluster model
+<br/>
+
+.large[1 - Map cluster labels onto a lower-dimensional representation <br/>]
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/Under_cluster_tsne.png" height = 300></a></div>
+    <div class="taco"><img src="img/Over_cluster_tsne.png" height = 300></a></div>
+  </div>
+</center>
+
+--
+
+**Pro:** simple method to evaluate clusters in a single bivariate plot
+
+--
+
+**Con:** relies on the lower-dimensional embedding being a faithful representation of the data
+
+---
+
+# Validating a cluster model
+
+<br/>
+
+.large[2 -  Map cluster labels onto bivariate plots <br/>]
+
+<center>
+<div>
+<img src="img/Backgating.png" height = 300>
+</div>
+</center>
+
+--
+
+**Pro:** Allows us to incorporate our expert knowlege of biology
+
+--
+
+**Con:** Time consuming, impossible to interrogate all combinations

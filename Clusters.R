@@ -21,7 +21,7 @@ d <- data.frame(id = rep(1:3, 100),
 
 d
 
-saveRDS(d, "cluster_data.rds")
+#saveRDS(d, "cluster_data.rds")
 
 pairs(d[, 3:5], col = d$cluster)
 
@@ -33,7 +33,7 @@ ggplot(d, aes(x, y)) +
   geom_point(size = 5, shape = 21, fill = "black") +
   theme_bw()
 
-ggsave("img/cluster_example1.png", dpi = 300)
+#ggsave("img/cluster_example1.png", dpi = 300)
 
 ggplot(d, aes(x, z)) +
   geom_point(size = 5) +
@@ -70,11 +70,11 @@ g_col <- ggpairs(d[, 3:5], mapping = aes(col = d$cluster),
 
 gpairs_lower(g) + theme_bw()
 
-ggsave("img/cluster_example2.png", dpi = 300)
+#ggsave("img/cluster_example2.png", dpi = 300)
 
 gpairs_lower(g_col) + theme_bw()
 
-ggsave("img/cluster_example3.png", dpi = 300)
+#ggsave("img/cluster_example3.png", dpi = 300)
 
 library(plot3D)
 library(plot3Drgl)
@@ -93,9 +93,9 @@ scatter3D_fancy <- function(x, y, z,..., colvar = z)
   scatter3D(x, y, z, ..., colvar = colvar, panel.first=panelfirst, colkey = FALSE) 
 }
 
-Cairo_png("img/cluster_example3.png", res = 200, type = "cairo-png")
+#Cairo_png("img/cluster_example3.png", res = 200, type = "cairo-png")
 scatter3D_fancy(x = d$x, y = d$y, z = d$z, pch = 19, phi = 10, theta = 20, 
                 bty = "g", ticktype = "detailed")
-dev.off()
+#dev.off()
 
 plotrgl()
