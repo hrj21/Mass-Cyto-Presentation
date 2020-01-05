@@ -72,7 +72,7 @@ class: inverse, center, middle
  
 ---
 background-image: url("img/OMIP_024.png")
-background-size: 60%
+background-size: 50%
 background-repeat: no-repeat
 background-position: 50% 50%
 
@@ -629,15 +629,17 @@ class: inverse, center, middle
 <br/>
 --
 
-.large[1 - Map cluster labels onto a lower-dimensional representation <br/>]
+.large[1 - Map cluster labels onto a lower-dimensional representation]
 
+ <br/>
 --
 
-.large[2 -  Map cluster labels onto bivariate plots <br/>]
+.large[2 -  Map cluster labels onto bivariate plots]
 
+ <br/>
 --
 
-.large[3 -  Plot expression data for each cluster <br/>]
+.large[3 -  Plot expression data for each cluster]
 
 
 ---
@@ -657,8 +659,6 @@ class: inverse, center, middle
 --
 
 **Pro:** simple method to evaluate clusters in a single bivariate plot
-
---
 
 **Con:** relies on the lower-dimensional embedding being a faithful representation of the data
 
@@ -680,6 +680,174 @@ class: inverse, center, middle
 
 **Pro:** Allows us to incorporate our expert knowlege of biology
 
+**Con:** Time consuming, impossible to interrogate all combinations
+
+---
+
+# Validating a cluster model
+
+<br/>
+
+.large[3 -  Plot expression data for each cluster <br/>]
+
+<center>
+<div>
+<img src="img/Backgating.png" height = 300>
+</div>
+</center>
+
+NEED TO REPLACE THIS IMAGE WITH ONE FROM PHIL <br/>
 --
 
-**Con:** Time consuming, impossible to interrogate all combinations
+**Pro:** Allows us to compare all parameters at once
+
+**Con:** Is a less "visual" than bivariate plots
+
+---
+
+# What if the clustering model doesn't fit well?
+--
+
+<center>
+.vlarge[If the model **under-clusters**, increase the number of clusters, duh.]
+</center>
+
+<center>
+<div>
+<img src="img/duh.gif" height=200>
+</div>
+</center>
+--
+<center>
+.vlarge[If the model **over-clusters**, decrease the number of clusters, OR manually merge clusters you believe represent the same cell type.]
+
+<div>
+<img src="img/merge.gif" height=200>
+</div>
+
+</center>
+
+---
+class: inverse, center, middle
+
+# Practical tips for dimension reduction and clustering
+
+---
+
+# Practical tips
+
+<br/>
+--
+
+.large[1 - Clean and transform<sup>1</sup> your data first!]
+
+.footnote[1 - or let FlowSOM do this for you (it uses logicle)]
+
+ <br/>
+--
+
+.large[2 -  Merge .fcs files together, analyse, then split apart later]
+
+<br/>
+--
+
+.large[3 -  Downsample if necessary]
+
+---
+
+# 1 - Clean and transform your data
+
+.large[Bead normalization, de-barcoding, bead exclusion, doublet exclusion, dead cell exclusion]
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/bead_normalization.png" height = 200></a></div>
+    <div class="taco"><img src="img/barcode.png" height = 200></a></div>
+  </div>
+</center>
+
+--
+
+<center>
+<div>
+<img src="img/data_cleanup.jpg" height=200>
+</div>
+</center>
+
+--
+
+.footnote[Check out the cytofclean R package: (https://github.com/JimboMahoney/cytofclean)]
+
+---
+
+# 1 - Clean and transform your data
+
+<center>
+<div>
+<img src="img/data_cleanup.jpg" height=200>
+</div>
+</center>
+
+GET IMAGE FROM DINA SHOWING ARCSIN VS LOG TRANSFORMATION
+
+---
+
+# 2 - Merge .fcs files together
+
+<center>
+<div>
+<img src="img/tsne_merged.png" height=450>
+</div>
+</center>
+
+.footnote[(https://www.flowjo.com/learn/flowjo-university/flowjo/tutorial/31)]
+
+---
+
+# 2 - Merge .fcs files together
+
+<center>
+<div>
+<img src="img/flowSOM_grid_and_mst.png" height=500>
+</div>
+</center>
+
+---
+
+# 3 - Downsample if necessary
+
+<center>
+<div>
+<img src="img/algorithm_speed.jpg" height=450>
+</div>
+</center>
+
+.footnote[Pedersen & Olsen, 2019]
+---
+class: inverse, center, middle
+
+# The big picture
+
+---
+
+# Overview of high-dimensional analysis
+
+<center>
+<div>
+<img src="img/analysis_overview.jpg" height=400>
+</div>
+</center>
+
+.footnote[Pedersen & Olsen, 2019]
+
+---
+
+class: inverse, center, middle
+
+# Thanks for your attention!
+
+<center>
+<div>
+<img src="img/questions.gif">
+</div>
+</center>
