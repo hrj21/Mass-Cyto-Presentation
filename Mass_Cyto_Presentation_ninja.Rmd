@@ -8,14 +8,17 @@ output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts, ninjutsu, custom.css] 
     lib_dir: libs
+    includes:
+      after_body: insert-logo.html
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
-
 ---
-class: inverse, center, middle
+
+
+class: inverse, center, middle, hide-logo
 
 # Let's get started
 
@@ -87,7 +90,7 @@ class: center
 
 --
 
-.vlarge[We turn to computational, **machine learning** methods to gate populations for us.]
+.vlarge[We turn to, **machine learning** methods to gate populations for us.]
 
 <div>
 <img src="img/terminator.gif" width=300 height=200>
@@ -155,7 +158,7 @@ class: center
 ]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is dimension reduction?
 
@@ -163,7 +166,7 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is dimension reduction?
 
@@ -225,7 +228,7 @@ class: inverse, center, middle
 .footnote[A brand new algorithm called PHATE was released in December: (https://www.biorxiv.org/content/10.1101/120378v1)]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # t-SNE
 
@@ -256,8 +259,9 @@ Randomly distribute the events in a new, two-dimensional space. Iteratively move
 ]
 
 ---
+class: hide-logo
 
-# What does a t-SNE look like for mass cytometry data?
+# What does t-SNE look like for mass cytometry data?
 
 <div>
 <img src="img/tsne_example.gif">
@@ -302,7 +306,7 @@ The t-SNE algorithm has **hyperparameters** that control what the final embeddin
 </div>
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # UMAP
 
@@ -318,9 +322,9 @@ class: center
 
 
 ---
-class: center
+class: center, hide-logo
 
-# What does a UMAP look like for mass cytometry data?
+# What does UMAP look like for mass cytometry data?
 
 <div>
 <img src="img/umap_v_tsne.PNG" height = 500>
@@ -393,7 +397,7 @@ The UMAP algorithm also has hyperparameters that control what the final embeddin
 ]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is clustering?
 
@@ -401,7 +405,7 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is clustering?
 
@@ -484,7 +488,7 @@ class: inverse, center, middle
 .footnote[flowGrid was released in April 2019: (https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-019-0690-2#article-info)]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # flowSOM
 
@@ -555,6 +559,7 @@ class: inverse, center, middle
 .footnote[(https://support.cytobank.org/hc/en-us/articles/360018965212-Introduction-to-FlowSOM-in-Cytobank)]
 
 ---
+class: hide-logo
 
 # What does flowSOM look like for mass cytometry data?
 
@@ -728,7 +733,7 @@ NEED TO REPLACE THIS IMAGE WITH ONE FROM PHIL <br/>
 </center>
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # Practical tips for dimension reduction and clustering
 
@@ -757,7 +762,7 @@ class: inverse, center, middle
 
 # 1 - Clean and transform your data
 
-.large[Bead normalization, de-barcoding, bead exclusion, doublet exclusion, dead cell exclusion]
+.large[Bead normalization, de-barcoding, bead exclusion, doublet and dead cell exclusion.]
 
 <center>
  <div id="taco_container">
@@ -784,11 +789,10 @@ class: inverse, center, middle
 
 <center>
 <div>
-<img src="img/data_cleanup.jpg" height=200>
+<img src="img/arcsin.png" height=450>
 </div>
 </center>
 
-GET IMAGE FROM DINA SHOWING ARCSIN VS LOG TRANSFORMATION
 
 ---
 
@@ -824,13 +828,14 @@ GET IMAGE FROM DINA SHOWING ARCSIN VS LOG TRANSFORMATION
 
 .footnote[Pedersen & Olsen, 2019]
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # The big picture
 
 ---
 
 # Overview of high-dimensional analysis
+</br>
 
 <center>
 <div>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <title>Introduction to high-parameter analysis</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hefin Rhys" />
-    <meta name="date" content="2020-01-05" />
+    <meta name="date" content="2020-01-16" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -19,11 +19,13 @@ class: center, middle, inverse, title-slide
 ## For mass cytometry
 ### Hefin Rhys
 ### Francis Crick Institute
-### 2020-01-05
+### 2020-01-16
 
 ---
 
-class: inverse, center, middle
+
+
+class: inverse, center, middle, hide-logo
 
 # Let's get started
 
@@ -95,7 +97,7 @@ class: center
 
 --
 
-.vlarge[We turn to computational, **machine learning** methods to gate populations for us.]
+.vlarge[We turn to, **machine learning** methods to gate populations for us.]
 
 &lt;div&gt;
 &lt;img src="img/terminator.gif" width=300 height=200&gt;
@@ -163,7 +165,7 @@ class: center
 ]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is dimension reduction?
 
@@ -171,7 +173,7 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is dimension reduction?
 
@@ -233,7 +235,7 @@ class: inverse, center, middle
 .footnote[A brand new algorithm called PHATE was released in December: (https://www.biorxiv.org/content/10.1101/120378v1)]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # t-SNE
 
@@ -264,8 +266,9 @@ Randomly distribute the events in a new, two-dimensional space. Iteratively move
 ]
 
 ---
+class: hide-logo
 
-# What does a t-SNE look like for mass cytometry data?
+# What does t-SNE look like for mass cytometry data?
 
 &lt;div&gt;
 &lt;img src="img/tsne_example.gif"&gt;
@@ -310,7 +313,7 @@ The t-SNE algorithm has **hyperparameters** that control what the final embeddin
 &lt;/div&gt;
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # UMAP
 
@@ -326,9 +329,9 @@ class: center
 
 
 ---
-class: center
+class: center, hide-logo
 
-# What does a UMAP look like for mass cytometry data?
+# What does UMAP look like for mass cytometry data?
 
 &lt;div&gt;
 &lt;img src="img/umap_v_tsne.PNG" height = 500&gt;
@@ -401,7 +404,7 @@ The UMAP algorithm also has hyperparameters that control what the final embeddin
 ]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is clustering?
 
@@ -409,7 +412,7 @@ class: inverse, center, middle
 
 ---
 
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # What is clustering?
 
@@ -492,7 +495,7 @@ class: inverse, center, middle
 .footnote[flowGrid was released in April 2019: (https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-019-0690-2#article-info)]
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # flowSOM
 
@@ -563,6 +566,7 @@ class: inverse, center, middle
 .footnote[(https://support.cytobank.org/hc/en-us/articles/360018965212-Introduction-to-FlowSOM-in-Cytobank)]
 
 ---
+class: hide-logo
 
 # What does flowSOM look like for mass cytometry data?
 
@@ -704,12 +708,12 @@ class: inverse, center, middle
 &lt;/div&gt;
 &lt;/center&gt;
 
-NEED TO REPLACE THIS IMAGE WITH ONE FROM PHIL
+NEED TO REPLACE THIS IMAGE WITH ONE FROM PHIL &lt;br/&gt;
 --
 
-**Pro:** Allows us to incorporate our expert knowlege of biology
+**Pro:** Allows us to compare all parameters at once
 
-**Con:** Time consuming, impossible to interrogate all combinations
+**Con:** Is a less "visual" than bivariate plots
 
 ---
 
@@ -736,7 +740,7 @@ NEED TO REPLACE THIS IMAGE WITH ONE FROM PHIL
 &lt;/center&gt;
 
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # Practical tips for dimension reduction and clustering
 
@@ -765,7 +769,7 @@ class: inverse, center, middle
 
 # 1 - Clean and transform your data
 
-.large[Bead normalization, de-barcoding, bead exclusion, doublet exclusion, dead cell exclusion]
+.large[Bead normalization, de-barcoding, bead exclusion, doublet and dead cell exclusion.]
 
 &lt;center&gt;
  &lt;div id="taco_container"&gt;
@@ -792,11 +796,10 @@ class: inverse, center, middle
 
 &lt;center&gt;
 &lt;div&gt;
-&lt;img src="img/data_cleanup.jpg" height=200&gt;
+&lt;img src="img/arcsin.png" height=450&gt;
 &lt;/div&gt;
 &lt;/center&gt;
 
-GET IMAGE FROM DINA SHOWING ARCSIN VS LOG TRANSFORMATION
 
 ---
 
@@ -832,13 +835,14 @@ GET IMAGE FROM DINA SHOWING ARCSIN VS LOG TRANSFORMATION
 
 .footnote[Pedersen &amp; Olsen, 2019]
 ---
-class: inverse, center, middle
+class: inverse, center, middle, hide-logo
 
 # The big picture
 
 ---
 
 # Overview of high-dimensional analysis
+&lt;/br&gt;
 
 &lt;center&gt;
 &lt;div&gt;
@@ -924,6 +928,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<style>
+.logo {
+  background-image: url("img/crick.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content'  +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
 
 <script>
 (function() {
