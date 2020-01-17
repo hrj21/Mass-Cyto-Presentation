@@ -351,7 +351,7 @@ The UMAP algorithm also has hyperparameters that control what the final embeddin
 
 ---
 
-# Hyperparameters of t-SNE
+# Hyperparameters of UMAP
 
 <br/><br/>
 
@@ -697,11 +697,11 @@ class: hide-logo
 
 <center>
 <div>
-<img src="img/Backgating.png" height = 300>
+<img src="img/Boxplot_of__variables_by_cluster.png" height = 300>
 </div>
 </center>
 
-NEED TO REPLACE THIS IMAGE WITH ONE FROM PHIL <br/>
+<br/>
 --
 
 **Pro:** Allows us to compare all parameters at once
