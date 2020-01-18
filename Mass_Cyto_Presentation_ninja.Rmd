@@ -68,7 +68,7 @@ class: inverse, center, middle, hide-logo
 --
 
 - .large[Manual gating is difficult to impossible]
-  - p(p-1)/2 number of bivariate combinations (435 combinations for 30 paramaters)
+  - p(p-1)/2 number of bivariate combinations (435 combinations for 30 parameters)
   - subjective
   - very likely to miss populations
 
@@ -399,6 +399,104 @@ The UMAP algorithm also has hyperparameters that control what the final embeddin
 ---
 class: inverse, center, middle, hide-logo
 
+# QUIZ TIME!
+
+.vlarge[Identify the "ology"]
+
+---
+
+# Identify **campanology**
+<br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/elton.gif" height = 200></a></div>
+    <div class="taco"><img src="img/quasi.gif" height = 200></a></div>
+  </div>
+</center>
+
+</br>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/camp.gif" height = 200></a></div>
+    <div class="taco"><img src="img/80s.gif" height = 200></a></div>
+  </div>
+</center>
+
+---
+
+# Identify **herpetology**
+<br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/snake.gif" height = 200></a></div>
+    <div class="taco"><img src="img/fencing.gif" height = 200></a></div>
+  </div>
+</center>
+
+</br>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/herpes.gif" height = 200></a></div>
+    <div class="taco"><img src="img/stamp.gif" height = 200></a></div>
+  </div>
+</center>
+
+---
+
+# Identify **etymology**
+<br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/kraken.gif" height = 200></a></div>
+    <div class="taco"><img src="img/octopus.gif" height = 200></a></div>
+  </div>
+</center>
+
+</br>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/insect.gif" height = 200></a></div>
+    <div class="taco"><img src="img/words.gif" height = 200></a></div>
+  </div>
+</center>
+
+---
+
+# Identify **garbology**
+<br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/alien_baby.gif" height = 200></a></div>
+    <div class="taco"><img src="img/trash.gif" height = 200></a></div>
+  </div>
+</center>
+
+</br>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/robot.gif" height = 200></a></div>
+    <div class="taco"><img src="img/beard.gif" height = 200></a></div>
+  </div>
+</center>
+
+---
+class: inverse, center, middle, hide-logo
+
+# ... ok, back to science
+
+
+---
+
+class: inverse, center, middle, hide-logo
+
 # What is clustering?
 
 .vlarge[Clustering algorithms aim to partition the dataset into discrete **clusters** (populations). A cluster is a set of data points that are more similar to each other, than data points in other clusters.]
@@ -536,6 +634,33 @@ class: inverse, center, middle, hide-logo
 
 ---
 
+# How does flowSOM work?
+
+
+1 - Reduce the number of dimensions using a **self-organizing map (SOM)** <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/som1.gif" height = 170></a></div>
+    <div class="taco"><img src="img/som_rectangle.png" height = 170></a></div>
+  </div>
+</center>
+
+
+2 -  Arrange the SOM into a **minimal spanning tree** for visualisation <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/PrimAlgDemo.gif" height = 170></a></div>
+    <div class="taco"><img src="img/som_mst.png" height = 170></a></div>
+  </div>
+</center>
+
+
+3 -  Find clusters of nodes in the SOM, and place the events in the cluster of their node
+
+---
+
 # Arrange the SOM into a minimal spanning tree
 
 <center>
@@ -545,6 +670,33 @@ class: inverse, center, middle, hide-logo
 </center>
 
 .footnote[(https://blog.cytobank.org/2019/03/15/beginners-guide-to-flowsom-profiling-the-innate-immune-response-to-viral-infection/)]
+
+---
+
+# How does flowSOM work?
+
+
+1 - Reduce the number of dimensions using a **self-organizing map (SOM)** <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/som1.gif" height = 170></a></div>
+    <div class="taco"><img src="img/som_rectangle.png" height = 170></a></div>
+  </div>
+</center>
+
+
+2 -  Arrange the SOM into a **minimal spanning tree** for visualisation <br/>
+
+<center>
+ <div id="taco_container">
+    <div class="taco"><img src="img/PrimAlgDemo.gif" height = 170></a></div>
+    <div class="taco"><img src="img/som_mst.png" height = 170></a></div>
+  </div>
+</center>
+
+
+3 -  Find clusters of nodes in the SOM, and place the events in the cluster of their node
 
 ---
 
