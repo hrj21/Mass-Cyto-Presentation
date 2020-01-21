@@ -1,6 +1,10 @@
 {
-    "path" : "~/Documents/Mass Cyto Presentation",
+    "path" : "~/Documents/Mass Cyto Presentation/img",
     "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
         {
             "ascending" : true,
             "columnIndex" : 2

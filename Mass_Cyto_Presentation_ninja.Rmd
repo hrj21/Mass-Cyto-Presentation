@@ -999,6 +999,18 @@ class: inverse, center, middle, hide-logo
 
 ---
 
+# Shameless plug...
+</br>
+
+<center>
+<div>
+<img src="img/Rhys-ML-MEAP-HI.png.jpeg" height=400>
+</div>
+</center>
+
+.footnote[(https://www.manning.com/books/machine-learning-for-mortals-mere-and-otherwise?a_aid=mlr&a_bid=7bfbd9c5)]
+
+---
 class: inverse, center, middle
 
 # Thanks for your attention!
